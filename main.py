@@ -59,7 +59,7 @@ def create_order():
     order_id = input("Order ID (e.g., ord1): ")
     user_id = input("Buyer User ID: ")
     
-    # 1. Check if the user exists and get their name (Demostrando la relación)
+    # 1. Check if the user exists and get their name 
     user_ref = db.collection('users').document(user_id)
     user = user_ref.get()
     
@@ -69,7 +69,7 @@ def create_order():
         
     user_data = user.to_dict()
     user_name = user_data['name']
-    print(f"✅ User found: {user_name}") # Aquí mostramos el nombre del usuario
+    print(f"✅ User found: {user_name}") 
 
     prod_id = input("Product ID to purchase: ")
     quantity = int(input("Quantity to purchase: "))
