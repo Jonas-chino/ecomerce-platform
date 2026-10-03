@@ -1,38 +1,39 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I developed a console-based E-Commerce Platform that integrates with Google Cloud Firestore. The software simulates the backend of a store: it allows administrators to manage a product catalog, register users, and process purchase orders. When an order is created, the system reads from the `users` and `products` collections to verify the data, calculates the total price, records the transaction in an `orders` collection, and dynamically updates the product's available stock in the cloud. To use the program, you simply run the script in a terminal and navigate through a numbered interactive menu.
 
-{Provide a description of the software that you wrote and how it integrates with a Cloud Database. Describe how to use your program.}
-
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of the cloud database.}
+The primary purpose of writing this software was to master the `firebase-admin` SDK, understand document-oriented data structures, and practice transactional logic (like checking inventory before approving a sale) in a cloud environment.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Cloud Database
 
-{Describe the cloud database you are using.}
+I am using **Google Cloud Firestore** (part of the Firebase platform), which is a flexible, scalable NoSQL cloud database.
 
-{Describe the structure of the database that you created.}
+The database structure is document-oriented and consists of three main collections that relate to each other through reference IDs:
+
+- **`products` collection:** Stores individual product documents. Each document contains fields for `name` (string), `price` (number), and `stock` (number).
+- **`users` collection:** Stores customer profiles. Each document contains fields for `name` (string) and `email` (string).
+- **`orders` collection:** Acts as the relationship bridge between users and products. Each order document stores the `user_id`, `product_id`, `quantity` (number), `total_price` (number), and a `date` (timestamp).
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+To develop this software, I used Visual Studio Code as my primary IDE and Git/GitHub for version control. The project is managed locally but interacts with the live Google Cloud environment via a secure service account key.
 
-{Describe the programming language that you used and any libraries.}
+The software is written in **Python 3**. The primary library used is `firebase-admin` to authenticate and interact with the Firestore database. I also utilized the built-in `datetime` library to generate accurate timestamps for the purchase orders.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
+- https://www.freecodecamp.org/espanol/news/como-empezar-con-firebase-usando-python/
+- https://www.youtube.com/watch?v=LaGYxQWYmmc&list=PLs3IFJPw3G9Jwaimh5yTKot1kV5zmzupt&index=1
+- https://www.trymito.io/blog/how-to-connect-python-to-firebase-database-complete-guide
 
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- https://elblogdelprogramador.com/posts/aprendiendo-firebase-con-python-una-guia-para-empezar/
 
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1
-- Item 2
+- Implement a secure User Authentication system instead of manually typing User IDs.
+- Add robust data validation to prevent entering negative values for prices or stock
 - Item 3
