@@ -4,7 +4,7 @@ I developed a console-based E-Commerce Platform that integrates with Google Clou
 
 The primary purpose of writing this software was to master the `firebase-admin` SDK, understand document-oriented data structures, and practice transactional logic (like checking inventory before approving a sale) in a cloud environment.
 
-[Software Demo Video](http://youtube.link.goes.here)
+https://youtu.be/QFiA3Y-2LjU
 
 # Cloud Database
 
@@ -32,8 +32,5 @@ The software is written in **Python 3**. The primary library used is `firebase-a
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
 - Implement a secure User Authentication system instead of manually typing User IDs.
 - Add robust data validation to prevent entering negative values for prices or stock
-- Item 3
